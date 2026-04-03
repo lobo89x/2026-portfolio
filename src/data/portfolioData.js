@@ -73,7 +73,7 @@ export const portfolioData = {
       description:
         'Mobile-first weather app built with Angular (standalone components) and Bootstrap 5. Features a seven-day “house windows” forecast, city search with favorites, browser geolocation, and OpenWeather One Call + Geocoding APIs with a shared response cache.',
       tech: ['Angular', 'Bootstrap', 'TypeScript'],
-      liveUrl: 'http://weather.leelabs756.com/',
+      liveUrl: 'https://weather.leelabs756.com/',
       githubUrl: 'https://github.com/lobo89x/weath-win-ang',
     },
     {

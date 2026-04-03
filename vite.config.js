@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// GitHub Pages project site: match repo name. Root site: VITE_BASE_PATH=/ npm run build
+// Custom domain / root hosting: VITE_BASE_PATH=/ in CI. Local dev defaults to '/'.
 export default defineConfig(({ command }) => ({
   plugins: [react()],
-  base: 'https://portfolio.leelabs756.com/', //process.env.VITE_BASE_PATH ?? (command === 'build' ? '/2026-portfolio/' : '/'),
+  base: process.env.VITE_BASE_PATH ?? '/',
 }));
