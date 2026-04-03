@@ -5,7 +5,7 @@ export const portfolioData = {
   site: {
     name: 'Alexander Lee',
     title: 'Front-End / Full-Stack Developer',
-    email: 'Ahlee1026@gmail.com',
+    email: 'ahlee1026@gmail.com',
     location: '',
     heroEyebrow: 'Portfolio',
   },
@@ -55,7 +55,7 @@ export const portfolioData = {
       description:
         'Full-stack application with a focus on modern UI and scalable architecture.',
       tech: ['React', 'Node.js', 'MongoDB'],
-      liveUrl: '',
+      liveUrl: 'https://dynasty.leelabs756.com/',
       githubUrl: 'https://github.com/lobo89x/dynasty',
     },
     {
@@ -69,11 +69,12 @@ export const portfolioData = {
     },
     {
       id: 3,
-      title: 'Project Placeholder',
-      description: 'Scaffold for future project expansion.',
-      tech: ['React'],
-      liveUrl: '',
-      githubUrl: '',
+      title: 'Weather Windows',
+      description:
+        'Mobile-first weather app built with Angular (standalone components) and Bootstrap 5. Features a seven-day “house windows” forecast, city search with favorites, browser geolocation, and OpenWeather One Call + Geocoding APIs with a shared response cache.',
+      tech: ['Angular', 'Bootstrap', 'TypeScript'],
+      liveUrl: 'http://weather.leelabs756.com/',
+      githubUrl: 'https://github.com/lobo89x/weath-win-ang',
     },
     {
       id: 4,
