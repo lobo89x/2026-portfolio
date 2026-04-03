@@ -3,8 +3,6 @@ export function ProjectCard({ project }) {
 
   const hasLiveUrl = typeof liveUrl === 'string' && liveUrl.trim() !== '';
   const hasGithubUrl = typeof githubUrl === 'string' && githubUrl.trim() !== '';
-  const liveIsRemote = hasLiveUrl && /^https?:\/\//i.test(liveUrl.trim());
-  const githubIsRemote = hasGithubUrl && /^https?:\/\//i.test(githubUrl.trim());
 
   return (
     <article className="flex flex-col rounded-2xl border border-amber-900/10 bg-white/70 p-6 shadow-md shadow-amber-900/5 transition duration-200 ease-out hover:scale-[1.01] hover:border-amber-800/20 hover:shadow-lg dark:border-cyan-400/10 dark:bg-indigo-950/50 dark:shadow-black/20 dark:hover:border-cyan-400/25 dark:hover:shadow-xl">
@@ -25,18 +23,20 @@ export function ProjectCard({ project }) {
         <div className="mt-6 flex flex-wrap gap-2">
           {hasLiveUrl && (
             <a
-              href={liveUrl}
-              {...(liveIsRemote ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-              className="inline-flex flex-1 min-w-[8rem] items-center justify-center rounded-lg bg-emerald-800 px-3 py-2 text-center text-sm font-semibold text-[#faf6ec] transition hover:bg-emerald-900 dark:bg-cyan-500 dark:text-indigo-950 dark:hover:bg-cyan-400 sm:flex-none"
+              href={liveUrl.trim()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex flex-1 min-w-[8rem] items-center justify-center rounded-lg bg-emerald-800 px-3 py-2 text-center text-sm font-semibold text-[#faf6ec] shadow-sm transition duration-200 hover:scale-[1.02] hover:bg-emerald-900 hover:shadow-md dark:bg-cyan-500 dark:text-indigo-950 dark:hover:bg-cyan-400 sm:flex-none"
             >
               Live demo
             </a>
           )}
           {hasGithubUrl && (
             <a
-              href={githubUrl}
-              {...(githubIsRemote ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-              className="inline-flex flex-1 min-w-[8rem] items-center justify-center rounded-lg border border-emerald-800/25 bg-transparent px-3 py-2 text-center text-sm font-semibold text-emerald-900 transition hover:bg-emerald-900/10 dark:border-cyan-400/35 dark:text-cyan-100 dark:hover:bg-cyan-400/10 sm:flex-none"
+              href={githubUrl.trim()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex flex-1 min-w-[8rem] items-center justify-center rounded-lg border border-emerald-800/25 bg-transparent px-3 py-2 text-center text-sm font-semibold text-emerald-900 shadow-sm transition duration-200 hover:scale-[1.02] hover:bg-emerald-900/10 hover:shadow-md dark:border-cyan-400/35 dark:text-cyan-100 dark:hover:bg-cyan-400/10 sm:flex-none"
             >
               GitHub
             </a>

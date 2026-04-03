@@ -11,7 +11,7 @@ export function Hero() {
       aria-labelledby="hero-heading"
     >
       <div className="mx-auto max-w-5xl">
-        <div className="rounded-3xl border border-amber-900/12 bg-gradient-to-br from-white/90 via-[#f3efe4] to-[#e8f0e4]/90 p-8 shadow-lg shadow-amber-900/5 dark:border-cyan-400/12 dark:from-indigo-950/90 dark:via-[#151832] dark:to-[#1a1030]/90 dark:shadow-cyan-500/5 sm:p-10 md:p-12">
+        <div className="rounded-3xl border border-amber-900/12 bg-gradient-to-br from-white/90 via-[#f3efe4] to-[#e8f0e4]/90 p-8 shadow-lg shadow-amber-900/5 backdrop-blur-sm dark:border-cyan-400/12 dark:from-indigo-950/90 dark:via-[#151832] dark:to-[#1a1030]/90 dark:shadow-cyan-500/5 sm:p-10 md:p-12">
           <p className="text-sm font-medium uppercase tracking-widest text-amber-800/80 dark:text-cyan-300/80">
             {portfolioData.site.heroEyebrow}
           </p>
