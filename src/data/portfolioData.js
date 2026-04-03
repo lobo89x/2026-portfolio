@@ -7,7 +7,9 @@ export const portfolioData = {
     title: 'Front-End / Full-Stack Developer',
     email: 'ahlee1026@gmail.com',
     location: '',
-    heroEyebrow: 'Portfolio',
+    /** Short hero paragraph — UI, systems, user-centered engineering */
+    heroSupporting:
+      'I build interfaces that feel effortless—pairing polished UI with scalable front-end architecture and a focus on real users, performance, and maintainable systems.',
   },
 
   navLinks: [
