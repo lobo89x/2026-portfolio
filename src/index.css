@@ -12,7 +12,14 @@
       scroll-behavior: auto;
     }
 
-    .animate-marquee {
+    .animate-marquee,
+    .animate-bg-blob-a,
+    .animate-bg-blob-b,
+    .animate-bg-blob-c,
+    .animate-bg-blob-d,
+    .animate-bg-light-a,
+    .animate-bg-light-b,
+    .animate-bg-grid-pulse {
       animation: none;
     }
   }

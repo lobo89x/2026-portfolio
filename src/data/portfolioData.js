@@ -7,7 +7,9 @@ export const portfolioData = {
     title: 'Front-End / Full-Stack Developer',
     email: 'ahlee1026@gmail.com',
     location: '',
-    heroEyebrow: 'Portfolio',
+    /** Short hero paragraph — UI, systems, user-centered engineering */
+    heroSupporting:
+      'I build interfaces that feel effortless—pairing polished UI with scalable front-end architecture and a focus on real users, performance, and maintainable systems.',
   },
 
   navLinks: [
@@ -15,6 +17,16 @@ export const portfolioData = {
     { id: 'projects', label: 'Projects', href: '#projects' },
     { id: 'contact', label: 'Contact', href: '#contact' },
   ],
+
+  /** Used for dynamic GitHub profile image in About */
+  githubUsername: 'lobo89x',
+
+  /** PDF in /public — header uses import.meta.env.BASE_URL + file */
+  resume: {
+    label: 'Resume',
+    file: 'Alexander-Lee-Resume.pdf',
+    downloadFileName: 'Alexander_Lee_Frontend_Resume.pdf',
+  },
 
   socialLinks: [
     {
@@ -53,8 +65,8 @@ export const portfolioData = {
       id: 1,
       title: 'Dynasty',
       description:
-        'Full-stack application with a focus on modern UI and scalable architecture.',
-      tech: ['React', 'Node.js', 'MongoDB'],
+        'My take on a React FE for my Navidrome SubSonic server since I didn’t like how most of the others out there handled podcasts. This integrates the external API for MediaWiki and the ones Navidrome itself comes with.',
+      tech: ['React', 'TypeScript', 'Navidrome API', 'MediaWiki API'],
       liveUrl: 'https://dynasty.leelabs756.com/',
       githubUrl: 'https://github.com/lobo89x/dynasty',
     },
@@ -62,9 +74,9 @@ export const portfolioData = {
       id: 2,
       title: 'Labs Admin',
       description:
-        'Administrative dashboard for managing systems, users, and workflows.',
-      tech: ['React', 'Tailwind', 'SQL'],
-      liveUrl: '',
+        'An Administrative dashboard for managing users from both my Navidrome and Jellyfin servers. It’s a little private but it does have full functionality, the tricky part was building the back end that would marry the two services together.',
+      tech: ['React', 'Tailwind CSS', 'Node.js', 'SQL', 'Jellyfin API', 'Navidrome API'],
+      liveUrl: 'https://admin.leelabs756.com/',
       githubUrl: 'https://github.com/lobo89x/labs-admin',
     },
     {
@@ -72,7 +84,7 @@ export const portfolioData = {
       title: 'Weather Windows',
       description:
         'Mobile-first weather app built with Angular (standalone components) and Bootstrap 5. Features a seven-day “house windows” forecast, city search with favorites, browser geolocation, and OpenWeather One Call + Geocoding APIs with a shared response cache.',
-      tech: ['Angular', 'Bootstrap', 'TypeScript'],
+      tech: ['Angular', 'Bootstrap', 'TypeScript', 'OpenWeather API'],
       liveUrl: 'https://weather.leelabs756.com/',
       githubUrl: 'https://github.com/lobo89x/weath-win-ang',
     },
@@ -88,9 +100,9 @@ export const portfolioData = {
   ],
 
   projectsIntro:
-    'Selected work and placeholders—swap in real demos and descriptions when you are ready.',
+    'Some of my latest projects',
 
-  aboutBlurb: `I'm Alexander Lee, a front-end and full-stack developer focused on clear UI, solid architecture, and shipping maintainable software. This section is a placeholder—replace it with your story, values, and what you are looking for next.`,
+  aboutBlurb: `Hey there! I am Alexander Lee, a front-end and full-stack developer focused on clear UI, solid architecture, and shipping maintainable software. I love a challenge and surpassing expectations. If you have a problem I can find a solution.`,
 
-  contactBlurb: `Interested in collaborating or hiring? Reach out by email or connect on LinkedIn. Replace the placeholder email and links in portfolioData.js with your real contact details.`,
+  contactBlurb: `Interested in collaborating or hiring? Reach out by email or connect on LinkedIn.`,
 };

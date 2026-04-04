@@ -1,48 +1,68 @@
 import { portfolioData } from '../data/portfolioData';
 import { TechTicker } from './TechTicker';
 
+function linkedInLink() {
+  return portfolioData.socialLinks.find((l) => l.id === 'linkedin');
+}
+
 export function Hero() {
-  const { name, title } = portfolioData.site;
+  const { name, title, heroSupporting } = portfolioData.site;
+  const linkedIn = linkedInLink();
+  const projectsLink = portfolioData.navLinks.find((l) => l.id === 'projects');
 
   return (
     <section
       id="top"
-      className="scroll-mt-20 px-4 pb-16 pt-12 sm:px-6 sm:pb-20 sm:pt-16"
+      className="relative isolate scroll-mt-20 px-0 pb-16 pt-10 sm:pb-20 sm:pt-14 md:pt-16"
       aria-labelledby="hero-heading"
     >
-      <div className="mx-auto max-w-5xl">
-        <div className="rounded-3xl border border-amber-900/12 bg-gradient-to-br from-white/90 via-[#f3efe4] to-[#e8f0e4]/90 p-8 shadow-lg shadow-amber-900/5 backdrop-blur-sm dark:border-cyan-400/12 dark:from-indigo-950/90 dark:via-[#151832] dark:to-[#1a1030]/90 dark:shadow-cyan-500/5 sm:p-10 md:p-12">
-          <p className="text-sm font-medium uppercase tracking-widest text-amber-800/80 dark:text-cyan-300/80">
-            {portfolioData.site.heroEyebrow}
-          </p>
-          <h1
-            id="hero-heading"
-            className="mt-3 font-display text-4xl font-bold tracking-tight text-emerald-950 dark:text-white sm:text-5xl md:text-6xl"
-          >
-            {name}
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-emerald-900/80 dark:text-cyan-100/75 sm:text-xl">
-            {title}
-          </p>
-          <div className="mt-8 max-w-3xl">
-            <TechTicker />
-          </div>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="#projects"
-              className="inline-flex items-center justify-center rounded-full bg-emerald-800 px-5 py-2.5 text-sm font-semibold text-[#faf6ec] shadow-md transition hover:bg-emerald-900 dark:bg-cyan-500 dark:text-indigo-950 dark:hover:bg-cyan-400"
-            >
-              View projects
-            </a>
+      <TechTicker variant="banner" />
+
+      <div className="mx-auto w-full max-w-4xl px-4 py-12 text-center sm:px-6 sm:py-14 md:py-16">
+        <h1
+          id="hero-heading"
+          className="font-display text-[clamp(2.5rem,5.2vw,3.75rem)] font-bold leading-[1.05] tracking-[-0.035em] text-emerald-950 dark:text-white"
+        >
+          {name}
+        </h1>
+        <p className="mt-4 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-800/70 dark:text-cyan-300/65 sm:text-sm">
+          {title}
+        </p>
+        <p className="mx-auto mt-6 max-w-[34rem] text-base font-normal leading-relaxed text-emerald-900/75 dark:text-cyan-100/65 sm:text-lg sm:leading-relaxed">
+          {heroSupporting}
+        </p>
+
+        <div className="mt-10 flex flex-col items-center gap-5 sm:mt-12 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-6">
+          <div className="flex flex-wrap justify-center gap-3">
+            {projectsLink && (
+              <a
+                href={projectsLink.href}
+                className="inline-flex min-h-[2.75rem] items-center justify-center rounded-md bg-emerald-900 px-7 text-sm font-semibold text-[#faf6ec] shadow-md shadow-emerald-900/15 transition duration-200 hover:-translate-y-px hover:bg-emerald-950 hover:shadow-lg hover:shadow-emerald-900/20 dark:bg-cyan-400 dark:text-slate-950 dark:shadow-cyan-400/15 dark:hover:bg-cyan-300 dark:hover:shadow-cyan-400/25"
+              >
+                {projectsLink.label}
+              </a>
+            )}
             <a
               href="#contact"
-              className="inline-flex items-center justify-center rounded-full border border-emerald-800/25 bg-white/50 px-5 py-2.5 text-sm font-semibold text-emerald-900 transition hover:border-emerald-800/40 hover:bg-white/80 dark:border-cyan-400/30 dark:bg-indigo-950/50 dark:text-cyan-100 dark:hover:border-cyan-400/50 dark:hover:bg-indigo-900/50"
+              className="inline-flex min-h-[2.75rem] items-center justify-center rounded-md border border-emerald-900/15 bg-white/60 px-7 text-sm font-semibold text-emerald-900 backdrop-blur-sm transition duration-200 hover:-translate-y-px hover:border-emerald-900/25 hover:bg-white/85 dark:border-cyan-400/20 dark:bg-indigo-950/35 dark:text-cyan-50 dark:hover:border-cyan-400/35 dark:hover:bg-indigo-900/45"
             >
-              Get in touch
+              Contact me
             </a>
+          {linkedIn && (
+            <a
+              href={linkedIn.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-[2.75rem] items-center justify-center rounded-md border border-emerald-900/15 bg-white/60 px-7 text-sm font-semibold text-emerald-900 backdrop-blur-sm transition duration-200 hover:-translate-y-px hover:border-emerald-900/25 hover:bg-white/85 dark:border-cyan-400/20 dark:bg-indigo-950/35 dark:text-cyan-50 dark:hover:border-cyan-400/35 dark:hover:bg-indigo-900/45"
+            >
+              {linkedIn.label}
+            </a>
+          )}
           </div>
         </div>
       </div>
+
+      <TechTicker variant="banner" />
     </section>
   );
 }
