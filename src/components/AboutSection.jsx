@@ -1,6 +1,13 @@
 import { portfolioData } from '../data/portfolioData';
 
+function githubAvatarUrl(username) {
+  return `https://github.com/${username}.png`;
+}
+
 export function AboutSection() {
+  const { githubUsername, aboutBlurb, site } = portfolioData;
+  const avatarSrc = githubAvatarUrl(githubUsername);
+
   return (
     <section
       id="about"
@@ -14,9 +21,18 @@ export function AboutSection() {
         >
           About
         </h2>
-        <div className="mt-6 max-w-3xl rounded-2xl border border-amber-900/10 bg-white/60 p-6 shadow-sm dark:border-cyan-400/10 dark:bg-indigo-950/40 sm:p-8">
-          <p className="text-base leading-relaxed text-emerald-900/85 dark:text-cyan-100/80">
-            {portfolioData.aboutBlurb}
+        <div className="mt-8 flex flex-col gap-8 sm:flex-row sm:items-start sm:gap-10">
+          <img
+            src={avatarSrc}
+            alt={site.name}
+            width={160}
+            height={160}
+            className="mx-auto h-36 w-36 shrink-0 rounded-2xl object-cover shadow-md shadow-amber-900/10 ring-1 ring-amber-900/10 dark:shadow-black/30 dark:ring-white/10 sm:mx-0 sm:h-40 sm:w-40"
+            loading="lazy"
+            decoding="async"
+          />
+          <p className="text-center text-base leading-relaxed text-emerald-900/85 dark:text-cyan-100/80 sm:text-left sm:text-lg sm:leading-relaxed">
+            {aboutBlurb}
           </p>
         </div>
       </div>

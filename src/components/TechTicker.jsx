@@ -1,19 +1,20 @@
 import { portfolioData } from '../data/portfolioData';
 
 /**
- * @param {{ variant?: 'default' | 'hero' }} props
+ * @param {{ variant?: 'default' | 'banner' }} props
+ * `banner` — larger type, full-width strip for above/below hero (not inside a card).
  */
 export function TechTicker({ variant = 'default' }) {
   const items = portfolioData.techStack;
   const loop = [...items, ...items];
 
-  const isHero = variant === 'hero';
+  const isBanner = variant === 'banner';
 
   return (
     <div
       className={
-        isHero
-          ? 'relative overflow-hidden rounded-xl border border-amber-900/[0.06] bg-gradient-to-b from-white/50 to-white/25 py-2.5 dark:border-white/[0.05] dark:from-indigo-950/35 dark:to-indigo-950/15'
+        isBanner
+          ? 'relative overflow-hidden border-y border-amber-900/[0.06] bg-white/35 py-3.5 dark:border-white/[0.06] dark:bg-indigo-950/25 sm:py-4'
           : 'relative overflow-hidden rounded-xl border border-amber-900/10 bg-white/40 py-3 dark:border-cyan-400/15 dark:bg-indigo-950/40'
       }
       role="presentation"
@@ -23,17 +24,17 @@ export function TechTicker({ variant = 'default' }) {
           <span
             key={`${tech}-${i}`}
             className={
-              isHero
-                ? 'inline-flex shrink-0 items-center px-5 text-[13px] font-medium tracking-wide text-emerald-900/68 sm:px-6 dark:text-cyan-100/58'
-                : 'inline-flex shrink-0 items-center px-6 text-sm font-medium text-emerald-900/75 dark:text-cyan-100/75'
+              isBanner
+                ? 'inline-flex shrink-0 items-center px-7 text-[0.95rem] font-semibold tracking-wide text-emerald-950 sm:px-9 sm:text-base dark:font-bold dark:text-white'
+                : 'inline-flex shrink-0 items-center px-6 text-sm font-semibold text-emerald-950 dark:font-bold dark:text-white'
             }
           >
             <span className="whitespace-nowrap">{tech}</span>
             <span
               className={
-                isHero
-                  ? 'ml-5 h-[3px] w-[3px] shrink-0 rounded-full bg-amber-700/30 dark:bg-cyan-400/35'
-                  : 'ml-6 h-1 w-1 shrink-0 rounded-full bg-amber-600/50 dark:bg-cyan-400/50'
+                isBanner
+                  ? 'ml-7 h-1 w-1 shrink-0 rounded-full bg-amber-800/40 sm:ml-9 dark:bg-white/45'
+                  : 'ml-6 h-1 w-1 shrink-0 rounded-full bg-amber-800/45 dark:bg-white/45'
               }
               aria-hidden="true"
             />
