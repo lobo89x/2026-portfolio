@@ -104,5 +104,5 @@ export const portfolioData = {
 
   aboutBlurb: `Hey there! I am Alexander Lee, a front-end and full-stack developer focused on clear UI, solid architecture, and shipping maintainable software. I love a challenge and surpassing expectations. If you have a problem I can find a solution.`,
 
-  contactBlurb: `Interested in collaborating or hiring? Reach out by email or connect on LinkedIn.`,
+  contactBlurb: `Interested in collaborating? Reach out by email or connect on LinkedIn.`,
 };
